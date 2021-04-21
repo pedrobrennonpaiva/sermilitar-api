@@ -3,17 +3,12 @@
    "version": "1.0.0",
    "description": "",
    "main": "index.js",
-   "type": "module",
    "scripts": {
       "dev": "ts-node-dev --respawn --pretty --transpile-only src/server.ts",
-      "start": "node dist/index.js",
-      "postinstall": "tsc",
-      "watch-node": "nodemon dist/index.js",
-      "watch-ts": "tsc -w",
-      "deploy": "git add . && git commit -m Heroku && git push origin master"
+      "start": "ts-node src/server.ts"
    },
-   "engines": { 
-      "node": "14.15.4" 
+   "engines": {
+      "node": "14.15.4"
    },
    "keywords": [],
    "author": "",
@@ -51,8 +46,8 @@
       "@types/helmet": "^4.0.0",
       "@types/mongoose": "^5.10.4",
       "@types/node": "^8.0.29",
-      "ts-node": "^9.0.0",
+      "ts-node": "3.3.0",
       "ts-node-dev": "^1.1.6",
-      "typescript": "^3.9.9"
+      "typescript": "3.9.9"
    }
 }
