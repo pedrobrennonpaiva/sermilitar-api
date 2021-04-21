@@ -1,0 +1,13 @@
+{
+   "type":"mongodb",
+   "url":"mongodb+srv://sermilitar-api:nxsBRCC8LQN1RuN9@cluster-sermilitar.toi1o.mongodb.net/serMilitar?retryWrites=true&w=majority",
+   "migrations": [
+       "./src/database/migrations/*.ts"
+   ],
+   "entities": [
+       "./src/models/*.ts"
+   ],
+   "cli": {
+       "migrationsDir":"./src/database/migrations"
+   }
+}
