@@ -22,6 +22,7 @@ export default {
             }
 
             request.file.fileUrl = `${request.protocol}://${request.headers.host}/image/upload/browser/${request.file.filename}`;
+            // request.file.fileUrl = `http://sermilitar-api.herokuapp.com/image/upload/browser/${request.file.filename}`;
 
             return response.status(201).send({ 
                 success: true, 

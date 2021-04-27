@@ -4,7 +4,10 @@ import { Alternative } from '../../models/Alternative';
 var schema = new Schema({
     id: { required: false, type: String, unique: true },
     registerDate: { required: false, type: Date },
-    name: { required: true, type: String },
+    text: { required: true, type: String },
+    questionId: { required: true, type: String },
+    position: { required: true, type: Number },
+    isCorrect: { required: true, type: Boolean },
 });
 
 interface IModel extends Alternative {}

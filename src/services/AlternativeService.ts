@@ -8,7 +8,7 @@ export class AlternativeService {
 
     async get() {
 
-        var models = await AlternativeDb.find();
+        var models = await AlternativeDb.find().lean();
 
         return models;
     }
@@ -17,7 +17,7 @@ export class AlternativeService {
         
         try
         {
-            var model = await AlternativeDb.findOne({ id });
+            var model = await AlternativeDb.findOne({ id }).lean();
 
             return model;
         }
