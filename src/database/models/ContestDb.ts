@@ -6,6 +6,7 @@ var schema = new Schema({
     registerDate: { required: false, type: Date },
     name: { required: true, type: String },
     year: { required: true, type: Number },
+    institutionId: { required: true, type: String },
     armedForceId: { required: true, type: String },
     patentId: { required: true, type: String },
     salary: { required: false, type: Number },

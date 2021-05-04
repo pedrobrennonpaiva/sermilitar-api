@@ -4,12 +4,17 @@ import { ArmedForce } from "./ArmedForce";
 import { Patent } from "./Patent";
 import { Scholarity } from "./Scholarity";
 import { ExaminingBoard } from "./ExaminingBoard";
+import { Institution } from "./Institution";
 
 export class Contest extends Base {
 
     name: string;
     
     year: number;
+
+    institutionId: string = uuid();
+
+    institution: Institution | null = null;
 
     armedForceId: string = uuid();
 

@@ -32,6 +32,7 @@ import SubjectDb from './models/SubjectDb';
 import SubjectMatterDb from './models/SubjectMatterDb';
 import AdminDb from './models/AdminDb';
 import ExaminingBoardDb from './models/ExaminingBoardDb';
+import InstitutionDb from './models/InstitutionDb';
 
 var db = {
     connect,
@@ -52,6 +53,7 @@ var db = {
     Subject: SubjectDb,
     SubjectMatter: SubjectMatterDb,
     ExaminingBoard: ExaminingBoardDb,
+    Institution: InstitutionDb,
 };
 
 export default db;
