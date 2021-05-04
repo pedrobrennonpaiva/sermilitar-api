@@ -6,6 +6,7 @@ const ContestDb = db.Contest;
 const ArmedForceDb = db.ArmedForce;
 const PatentDb = db.Patent;
 const ScholarityDb = db.Scholarity;
+const ExaminingBoardDb = db.ExaminingBoard;
 
 export class ContestService {
 
@@ -18,6 +19,7 @@ export class ContestService {
             model.armedForce = await ArmedForceDb.findOne({ id: model?.armedForceId });
             model.patent = await PatentDb.findOne({ id: model?.patentId });
             model.scholarity = await ScholarityDb.findOne({ id: model?.scholarityId });
+            model.examiningBoard = await ExaminingBoardDb.findOne({ id: model?.examiningBoardId });
         }
 
         return models;
@@ -31,6 +33,7 @@ export class ContestService {
             model!.armedForce = await ArmedForceDb.findOne({ id: model?.armedForceId });
             model!.patent = await PatentDb.findOne({ id: model?.patentId });
             model!.scholarity = await ScholarityDb.findOne({ id: model?.scholarityId });
+            model!.examiningBoard = await ExaminingBoardDb.findOne({ id: model?.examiningBoardId });
 
             return model;
         }
@@ -60,12 +63,14 @@ export class ContestService {
         model.locations = request.body.locations;
         model.duration = request.body.duration;
         model.site = request.body.site;
+        model.examiningBoardId = request.body.examiningBoardId;
 
         var armedForce = await ArmedForceDb.findOne({ id: model.armedForceId });
         var patent = await PatentDb.findOne({ id: model.patentId });
         var scholarity = await ScholarityDb.findOne({ id: model.scholarityId });
+        var examiningBoard = await ExaminingBoardDb.findOne({ id: model.examiningBoardId });
 
-        if(!armedForce || !patent || !scholarity)
+        if(!armedForce || !patent || !scholarity || !examiningBoard)
         {
             response.status(500).send({ 
                 success: false, 
@@ -73,6 +78,7 @@ export class ContestService {
                     ${!armedForce ? 'Força armada não existe! ' : ''}
                     ${!patent ? 'Patente não existe! ' : ''}
                     ${!scholarity ? 'Escolaridade não existe!' : ''}
+                    ${!examiningBoard ? 'Banca não existe!' : ''}
                 `
             });
             return;
@@ -117,6 +123,7 @@ export class ContestService {
         md.armedForceId = request.body.armedForceId ? request.body.armedForceId : oldMd?.armedForceId;
         md.patentId = request.body.patentId ? request.body.patentId : oldMd?.patentId;
         md.scholarityId = request.body.scholarityId ? request.body.scholarityId : oldMd?.scholarityId;
+        md.examiningBoardId = request.body.examiningBoardId ? request.body.examiningBoardId : oldMd?.examiningBoardId;
         md.salary = request.body.salary;
         md.questionsLength = request.body.questionsLength;
         md.questionDescription = request.body.questionDescription;
@@ -133,8 +140,9 @@ export class ContestService {
         var armedForce = await ArmedForceDb.findOne({ id: md.armedForceId });
         var patent = await PatentDb.findOne({ id: md.patentId });
         var scholarity = await ScholarityDb.findOne({ id: md.scholarityId });
+        var examiningBoard = await ExaminingBoardDb.findOne({ id: md.examiningBoardId });
 
-        if(!armedForce || !patent || !scholarity)
+        if(!armedForce || !patent || !scholarity || !examiningBoard)
         {
             response.status(500).send({ 
                 success: false, 
@@ -142,6 +150,7 @@ export class ContestService {
                     ${!armedForce ? 'Força armada não existe! ' : ''}
                     ${!patent ? 'Patente não existe! ' : ''}
                     ${!scholarity ? 'Escolaridade não existe!' : ''}
+                    ${!examiningBoard ? 'Banca não existe!' : ''}
                 `
             });
             return;

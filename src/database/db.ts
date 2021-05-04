@@ -31,6 +31,7 @@ import ShoppingDb from './models/ShoppingDb';
 import SubjectDb from './models/SubjectDb';
 import SubjectMatterDb from './models/SubjectMatterDb';
 import AdminDb from './models/AdminDb';
+import ExaminingBoardDb from './models/ExaminingBoardDb';
 
 var db = {
     connect,
@@ -50,6 +51,7 @@ var db = {
     Shopping: ShoppingDb,
     Subject: SubjectDb,
     SubjectMatter: SubjectMatterDb,
+    ExaminingBoard: ExaminingBoardDb,
 };
 
 export default db;

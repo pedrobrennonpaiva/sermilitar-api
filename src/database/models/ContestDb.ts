@@ -21,6 +21,7 @@ var schema = new Schema({
     locations: { required: false, type: String },
     duration: { required: false, type: String },
     site: { required: false, type: String },
+    examiningBoardId: { required: true, type: String },
 });
 
 interface IModel extends Contest {}

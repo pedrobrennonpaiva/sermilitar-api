@@ -20,6 +20,7 @@ import subjectMatterRouter from './routes/subjectMatterRouter';
 import userRouter from './routes/userRouter';
 import adminRouter from './routes/adminRouter';
 import imageRouter from './routes/imageRouter';
+import examiningBoardRouter from './routes/examiningBoardRouter';
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -46,6 +47,7 @@ app.use('/subjectMatter', subjectMatterRouter);
 app.use('/user', userRouter);
 app.use('/admin', adminRouter);
 app.use('/image', imageRouter);
+app.use('/examiningBoard', examiningBoardRouter);
 
 app.listen(port);
 

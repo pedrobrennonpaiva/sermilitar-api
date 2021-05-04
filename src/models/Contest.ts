@@ -3,6 +3,7 @@ import { v4 as uuid } from 'uuid';
 import { ArmedForce } from "./ArmedForce";
 import { Patent } from "./Patent";
 import { Scholarity } from "./Scholarity";
+import { ExaminingBoard } from "./ExaminingBoard";
 
 export class Contest extends Base {
 
@@ -45,4 +46,8 @@ export class Contest extends Base {
     duration: string;
 
     site: string;
+
+    examiningBoardId: string = uuid();
+    
+    examiningBoard: ExaminingBoard | null = null;
 }
