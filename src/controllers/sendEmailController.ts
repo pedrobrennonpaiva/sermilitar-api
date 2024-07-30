@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 
 const sgMail = require('@sendgrid/mail');
 
-const SENDGRID = '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';
+const SENDGRID = 'placeholder';
 
 export default {
 
