@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-mongoose.connect("mongodb+srv://sermilitar-api:nxsBRCC8LQN1RuN9@cluster-sermilitar.toi1o.mongodb.net/serMilitar?retryWrites=true&w=majority", 
+mongoose.connect("placeholder", 
     { 
         useUnifiedTopology: true,
         useNewUrlParser: true,
@@ -9,7 +9,7 @@ mongoose.connect("mongodb+srv://sermilitar-api:nxsBRCC8LQN1RuN9@cluster-sermilit
     console.log('Banco conectado');
 });
 
-const connect = mongoose.createConnection("mongodb+srv://sermilitar-api:nxsBRCC8LQN1RuN9@cluster-sermilitar.toi1o.mongodb.net/serMilitar?retryWrites=true&w=majority", { 
+const connect = mongoose.createConnection("placeholder", { 
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true, 
